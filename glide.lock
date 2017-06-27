@@ -1,5 +1,5 @@
-hash: be8954df547a143e7abcc63da91151118d90517696661ba447b5f63d31cd76ee
-updated: 2017-06-20T08:34:03.07850625+02:00
+hash: 7e82e250aaca2440c9b2e42a06c3e0ef02cb82b17f8584cd08ce1e5be5c2a453
+updated: 2017-06-27T19:19:50.565438279+02:00
 imports:
 - name: github.com/davecgh/go-spew
   version: 5215b55f46b2b919f50a1df0eaa5886afe4e3b3d
@@ -110,6 +110,10 @@ imports:
 - name: github.com/Shopify/sarama
   version: f0996189c86dc27338468f2a9b10077c6d572b34
   repo: https://github.com/urso/sarama
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
 - name: golang.org/x/net
   version: d58ca6618b994150e624f6888d871f4709db51a0
   subpackages:
@@ -129,5 +133,11 @@ imports:
 - name: k8s.io/client-go
   version: e121606b0d09b2e1c467183ee46217fa85a6b672
   subpackages:
+  - pkg/third_party/forked/golang/template
+  - pkg/util/jsonpath
   - util/jsonpath
-testImports: []
+testImports:
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib
