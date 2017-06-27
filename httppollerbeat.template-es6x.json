@@ -2,7 +2,7 @@
   "mappings": {
     "_default_": {
       "_meta": {
-        "version": "5.4.1"
+        "version": "5.4.3"
       },
       "date_detection": false,
       "dynamic_templates": [
@@ -53,9 +53,6 @@
         },
         "dockerhub_repostiory_star_count": {
           "type": "long"
-        },
-        "fields": {
-          "properties": {}
         },
         "github_repository_forks_count": {
           "type": "long"
