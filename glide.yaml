@@ -6,7 +6,7 @@ owners:
   homepage: https://github.com/mmatur
 import:
 - package: github.com/elastic/beats
-  version: v5.4.1
+  version: v5.4.3
   subpackages:
   - libbeat/beat
   - libbeat/cfgfile

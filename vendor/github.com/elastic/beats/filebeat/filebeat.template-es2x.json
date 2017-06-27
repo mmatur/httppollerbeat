@@ -7,7 +7,7 @@
         }
       },
       "_meta": {
-        "version": "5.4.1"
+        "version": "5.4.3"
       },
       "date_detection": false,
       "dynamic_templates": [
@@ -290,9 +290,6 @@
           "ignore_above": 1024,
           "index": "not_analyzed",
           "type": "string"
-        },
-        "fields": {
-          "properties": {}
         },
         "fileset": {
           "properties": {
