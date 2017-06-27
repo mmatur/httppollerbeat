@@ -28,6 +28,7 @@ addons:
 
 before_install:
   # Redo the travis setup but with the elastic/libbeat path. This is needed so the package path is correct
+  - chmod -R go-w $GOPATH/src/github.com/mmatur/httppollerbeat
   - mkdir -p $HOME/gopath/src/github.com/mmatur/httppollerbeat/
   - rsync -az ${TRAVIS_BUILD_DIR}/ $HOME/gopath/src/github.com/mmatur/httppollerbeat/
   - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/mmatur/httppollerbeat/
