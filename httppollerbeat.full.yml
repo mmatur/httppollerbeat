@@ -11,7 +11,7 @@ httppollerbeat:
         headers:
           Accept: application/json
           Content-Type: application/json
-          Authorization: Bearer 0abf678cd2ee8e4ce8c37cadb77c088c871fcac0
+          Authorization: Bearer # Github Token
         document_type: httppollerbeat
         datas:
           - name: github_repository_fullname
