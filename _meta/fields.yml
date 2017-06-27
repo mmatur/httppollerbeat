@@ -1,0 +1,69 @@
+- key: httppollerbeat
+  title: httppollerbeat
+  description:
+  fields:
+    - name: url
+      type: text
+      required: true
+      description: >
+        The url pull
+    - name: github_repository_fullname
+      type: keyword
+      required: false
+      description: >
+        The full name of the repository
+    - name: github_repository_owner
+      type: keyword
+      required: false
+      description: >
+        The owner of the repository
+    - name: github_repository_name
+      type: keyword
+      required: false
+      description: >
+        The name of the repository
+    - name: github_repository_forks_count
+      type: long
+      required: false
+      description: >
+        The count of forks for the repository
+    - name: github_repository_pull_requests_count
+      type: long
+      required: false
+      description: >
+        The count of pull request for the repository
+    - name: github_repository_open_issues_count
+      type: long
+      required: false
+      description: >
+        The count of open issues for the repository
+    - name: github_repository_stargazers_count
+      type: long
+      required: false
+      description: >
+        The count of stargazers for the repository
+    - name: dockerhub_repository_fullname
+      type: keyword
+      required: false
+      description: >
+        The fullname of dockerhub repository
+    - name: dockerhub_repository_owner
+      type: keyword
+      required: false
+      description: >
+        The owner of the repository on dockerhub
+    - name: dockerhub_repository_name
+      type: keyword
+      required: false
+      description: >
+        The name of the repository on dockerhub
+    - name: dockerhub_repostiory_pull_count
+      type: long
+      required: false
+      description: >
+        The count of pull in dockerhub
+    - name: dockerhub_repostiory_star_count
+      type: long
+      required: false
+      description: >
+        The count of stars in dockerhub

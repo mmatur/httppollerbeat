@@ -1,0 +1,18 @@
+package: github.com/mmatur/httppollerbeat
+homepage: https://github.com/mmatur/httppollerbeat
+license: Apache-2.0
+owners:
+- name: Michael MATUR
+  homepage: https://github.com/mmatur
+import:
+- package: github.com/elastic/beats
+  version: v5.4.1
+  subpackages:
+  - libbeat/beat
+  - libbeat/cfgfile
+  - libbeat/logp
+  - libbeat/publisher
+- package: k8s.io/client-go
+  version: v2.0.0
+  subpackages:
+    - util/jsonpath

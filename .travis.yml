@@ -1,0 +1,45 @@
+sudo: required
+dist: trusty
+services:
+  - docker
+
+language: go
+
+go:
+  - 1.7.4
+
+os:
+  - linux
+  - osx
+
+env:
+  matrix:
+    - TARGETS="ci"
+    - TARGETS="crosscompile"
+
+  global:
+    # Cross-compile for amd64 only to speed up testing.
+    - GOX_FLAGS="-arch amd64"
+
+addons:
+  apt:
+    packages:
+      - python-virtualenv
+
+before_install:
+  # Redo the travis setup but with the elastic/libbeat path. This is needed so the package path is correct
+  - mkdir -p $HOME/gopath/src/github.com/mmatur/httppollerbeat/
+  - rsync -az ${TRAVIS_BUILD_DIR}/ $HOME/gopath/src/github.com/mmatur/httppollerbeat/
+  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/mmatur/httppollerbeat/
+  - cd $HOME/gopath/src/github.com/mmatur/httppollerbeat/
+
+install:
+  - go get -v github.com/Masterminds/glide
+  - cd $GOPATH/src/github.com/Masterminds/glide && git checkout v0.12.3 && go install && cd -
+  - glide install
+
+script:
+  - make $TARGETS
+
+after_success:
+  # Copy full.cov to coverage.txt because codecov.io requires this file

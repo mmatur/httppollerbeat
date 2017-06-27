@@ -1,0 +1,8 @@
+/.idea
+/build/
+logs/
+.DS_Store
+/httppollerbeat
+/httppollerbeat.test
+
+*.pyc
