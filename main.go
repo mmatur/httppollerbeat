@@ -8,8 +8,10 @@ import (
 	"github.com/mmatur/httppollerbeat/beater"
 )
 
+var name = "httppollerbeat"
+
 func main() {
-	err := beat.Run("httppollerbeat", "", beater.New)
+	err := beat.Run(name, "", beater.New)
 	if err != nil {
 		os.Exit(1)
 	}
