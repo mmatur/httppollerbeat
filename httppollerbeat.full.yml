@@ -1,66 +1,11 @@
+################### Httppollerbeat Configuration Example #########################
+
+############################# Httppollerbeat ######################################
+
 httppollerbeat:
-  hosts:
-      - schedule: 10s
-        url: https://api.github.com/graphql
-        method: post
-        body: |
-          { "query": "query ($owner: String!, $name: String!) { repository(owner: $owner, name: $name) { nameWithOwner name owner {login} createdAt stargazers { totalCount } watchers { totalCount } pullRequests(states: OPEN) { totalCount } openedIssues: issues(states: OPEN) { totalCount } forks { totalCount } releases { totalCount } }}",
-            "variables": "{\"owner\": \"containous\",\"name\": \"traefik\"}"
-          }
-        timeout: 10s
-        headers:
-          Accept: application/json
-          Content-Type: application/json
-          Authorization: Bearer # Github Token
-        document_type: httppollerbeat
-        datas:
-          - name: github_repository_fullname
-            json_path: "{.data.repository.nameWithOwner}"
-            json_type: string
-          - name: github_repository_owner
-            json_path: "{.data.repository.owner.login}"
-            json_type: string
-          - name: github_repository_name
-            json_path: "{.data.repository.name}"
-            json_type: string
-          - name: github_repository_stargazers_count
-            json_path: "{.data.repository.stargazers.totalCount}"
-            json_type: int
-          - name: github_repository_pull_requests_count
-            json_path: "{.data.repository.pullRequests.totalCount}"
-            json_type: int
-          - name: github_repository_open_issues_count
-            json_path: "{.data.repository.openedIssues.totalCount}"
-            json_type: int
-          - name: github_repository_forks_count
-            json_path: "{.data.repository.forks.totalCount}"
-            json_type: int
-          - name: github_repository_releases_count
-            json_path: "{.data.repository.releases.totalCount}"
-            json_type: int
-          - name: github_repository_watchers_count
-            json_path: "{.data.repository.watchers.totalCount}"
-            json_type: int
-      - schedule: 10s
-        url: https://hub.docker.com/v2/repositories/library/traefik
-        method: get
-        timeout: 10s
-        document_type: httppollerbeat
-        fields:
-          dockerhub_repository_fullname: library/traefik
-        datas:
-          - name: dockerhub_repository_owner
-            json_path: "{.user}"
-            json_type: string
-          - name: dockerhub_repository_name
-            json_path: "{.name}"
-            json_type: string
-          - name: dockerhub_repostiory_star_count
-            json_path: "{.star_count}"
-            json_type: int
-          - name: dockerhub_repository_pull_count
-            json_path: "{.pull_count}"
-            json_type: int
+  # Defines how often an event is sent to the output
+  period: 1s
+
 #================================ General ======================================
 
 # The name of the shipper that publishes the network data. It can be used to group

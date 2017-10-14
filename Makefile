@@ -7,7 +7,6 @@ TEST_ENVIRONMENT=false
 ES_BEATS?=./vendor/github.com/elastic/beats
 GOPACKAGES=$(shell glide novendor)
 PREFIX?=.
-SNAPSHOT?=no
 NOTICE_FILE=NOTICE
 
 # Path to the libbeat Makefile

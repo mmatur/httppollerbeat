@@ -1,5 +1,4 @@
 httppollerbeat:
-
   hosts:
     - schedule: 10s
       url: https://url.com

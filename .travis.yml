@@ -6,15 +6,16 @@ services:
 language: go
 
 go:
-  - 1.8.3
+  - 1.8
 
 os:
   - linux
+  - osx
 
 env:
   matrix:
-    - TARGETS="ci"
-    - TARGETS="crosscompile"
+    - TARGETS="check"
+    - TARGETS="testsuite"
 
   global:
     # Cross-compile for amd64 only to speed up testing.
@@ -27,16 +28,13 @@ addons:
 
 before_install:
   # Redo the travis setup but with the elastic/libbeat path. This is needed so the package path is correct
-  - chmod -R go-w $GOPATH/src/github.com/mmatur/httppollerbeat
   - mkdir -p $HOME/gopath/src/github.com/mmatur/httppollerbeat/
   - rsync -az ${TRAVIS_BUILD_DIR}/ $HOME/gopath/src/github.com/mmatur/httppollerbeat/
   - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/mmatur/httppollerbeat/
   - cd $HOME/gopath/src/github.com/mmatur/httppollerbeat/
 
 install:
-  - go get -v github.com/Masterminds/glide
-  - cd $GOPATH/src/github.com/Masterminds/glide && git checkout v0.12.3 && go install && cd -
-  - glide install
+  - true
 
 script:
   - make $TARGETS

@@ -9,7 +9,7 @@ Ensure that this folder is at the following location:
 
 ### Requirements
 
-* [Golang](https://golang.org/dl/) 1.8.3
+* [Golang](https://golang.org/dl/) 1.7
 
 ### Init Project
 To get running with Httppollerbeat and also install the
