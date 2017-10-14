@@ -86,22 +86,27 @@ func (p *Poller) makeHttpCall() error {
 		logp.Err("httppollerbeat", "An error occurred while marshalling response to JSON: %w", errs)
 	}
 
-	var datas map[string]interface{}
-	datas = make(map[string]interface{})
+	datas := make(map[string]interface{})
 
-	for _, e := range p.config.Datas {
-		value, err := parseJSONPath(jsonBody, e.Name, e.JsonPath, e.JsonType)
-		logp.Info("value name : %s json path: %s value %s", e.Name, e.JsonPath, value)
+	fields := make(map[string]string)
+
+	for _, data := range p.config.Datas {
+		value, err := parseJSONPath(jsonBody, data.Name, data.JsonPath, data.JsonType)
+		logp.Info("value name : %s json path: %s value %s", data.Name, data.JsonPath, value)
 		if err != nil {
-			return fmt.Errorf("error parsing %s: %v", e.Name, err)
+			return fmt.Errorf("error parsing %s: %v", data.Name, err)
 		}
-		datas[e.Name] = value
+		datas[data.Name] = value
+	}
+
+	for _, field := range p.config.Fields {
+		fields[field.Name] = field.Value
 	}
 
 	event := Event{
 		ReadTime:     time.Now(),
 		DocumentType: p.documentType,
-		Fields:       p.config.Fields,
+		Fields:       fields,
 		Datas:        datas,
 		Url:          p.config.Url,
 	}

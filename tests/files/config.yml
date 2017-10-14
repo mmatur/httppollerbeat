@@ -1,5 +1,4 @@
 httppollerbeat:
-
   hosts:
     - schedule: 10s
       url: https://url.com
@@ -17,5 +16,7 @@ httppollerbeat:
           json_path: "{.name2}"
           json_type: "int"
       fields:
-        foo1: bar1
-        foo2: bar2
+        - name: foo1
+          value: bar1
+        - name: foo2
+          value: bar2

@@ -29,8 +29,13 @@ type HostConfig struct {
 	Headers      map[string]string `config:"headers"`
 	Timeout      time.Duration     `config:"timeout"`
 	DocumentType string            `config:"document_type"`
-	Fields       map[string]string `config:"fields"`
+	Fields       []FieldConfig     `config:"fields"`
 	Datas        []DataConfig      `config:"datas"`
+}
+
+type FieldConfig struct {
+	Name  string `config:"name"`
+	Value string `config:"value"`
 }
 
 type DataConfig struct {

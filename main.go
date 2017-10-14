@@ -11,7 +11,7 @@ import (
 var name = "httppollerbeat"
 
 func main() {
-	err := beat.Run(name, "", beater.New)
+	err := beat.Run(name, appVersion, beater.New)
 	if err != nil {
 		os.Exit(1)
 	}
