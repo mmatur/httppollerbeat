@@ -14,31 +14,31 @@ httppollerbeat:
           Authorization: Bearer # Github Token
         document_type: httppollerbeat
         datas:
-          - name: github_repository_fullname
+          - name: github.repository.fullname
             json_path: "{.data.repository.nameWithOwner}"
             json_type: string
-          - name: github_repository_owner
+          - name: github.repository.owner
             json_path: "{.data.repository.owner.login}"
             json_type: string
-          - name: github_repository_name
+          - name: github.repository.name
             json_path: "{.data.repository.name}"
             json_type: string
-          - name: github_repository_stargazers_count
+          - name: github.repository.stargazers_count
             json_path: "{.data.repository.stargazers.totalCount}"
             json_type: int
-          - name: github_repository_pull_requests_count
+          - name: github.repository.pull_requests_count
             json_path: "{.data.repository.pullRequests.totalCount}"
             json_type: int
-          - name: github_repository_open_issues_count
+          - name: github.repository.open_issues_count
             json_path: "{.data.repository.openedIssues.totalCount}"
             json_type: int
-          - name: github_repository_forks_count
+          - name: github.repository.forks_count
             json_path: "{.data.repository.forks.totalCount}"
             json_type: int
-          - name: github_repository_releases_count
+          - name: github.repository.releases_count
             json_path: "{.data.repository.releases.totalCount}"
             json_type: int
-          - name: github_repository_watchers_count
+          - name: github.repository.watchers_count
             json_path: "{.data.repository.watchers.totalCount}"
             json_type: int
       - schedule: 10s
@@ -47,20 +47,21 @@ httppollerbeat:
         timeout: 10s
         document_type: httppollerbeat
         fields:
-          dockerhub_repository_fullname: library/traefik
+          dockerhub.repository.fullname: library/traefik
         datas:
-          - name: dockerhub_repository_owner
+          - name: dockerhub.repository.owner
             json_path: "{.user}"
             json_type: string
-          - name: dockerhub_repository_name
+          - name: dockerhub.repository.name
             json_path: "{.name}"
             json_type: string
-          - name: dockerhub_repostiory_star_count
+          - name: dockerhub.repository.star_count
             json_path: "{.star_count}"
             json_type: int
-          - name: dockerhub_repository_pull_count
+          - name: dockerhub.repository.pull_count
             json_path: "{.pull_count}"
             json_type: int
+
 #================================ General ======================================
 
 # The name of the shipper that publishes the network data. It can be used to group

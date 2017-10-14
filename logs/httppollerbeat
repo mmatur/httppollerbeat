@@ -1,0 +1,23 @@
+2017-10-16T19:04:05+02:00 INFO Metrics logging every 30s
+2017-10-16T19:04:05+02:00 INFO Home path: [/home/michael/sources/go/src/github.com/mmatur/httppollerbeat] Config path: [/home/michael/sources/go/src/github.com/mmatur/httppollerbeat] Data path: [/home/michael/sources/go/src/github.com/mmatur/httppollerbeat/data] Logs path: [/home/michael/sources/go/src/github.com/mmatur/httppollerbeat/logs]
+2017-10-16T19:04:05+02:00 INFO Setup Beat: httppollerbeat; Version: 5.6.3
+2017-10-16T19:04:05+02:00 INFO Loading template enabled. Reading template file: /home/michael/sources/go/src/github.com/mmatur/httppollerbeat/httppollerbeat.template.json
+2017-10-16T19:04:05+02:00 INFO Loading template enabled for Elasticsearch 2.x. Reading template file: /home/michael/sources/go/src/github.com/mmatur/httppollerbeat/httppollerbeat.template-es2x.json
+2017-10-16T19:04:05+02:00 INFO Loading template enabled for Elasticsearch 6.x. Reading template file: /home/michael/sources/go/src/github.com/mmatur/httppollerbeat/httppollerbeat.template-es6x.json
+2017-10-16T19:04:05+02:00 INFO Elasticsearch url: http://localhost:9200
+2017-10-16T19:04:05+02:00 INFO Activated elasticsearch as output plugin.
+2017-10-16T19:04:05+02:00 INFO Publisher name: MM-XPS-15
+2017-10-16T19:04:05+02:00 INFO Flush Interval set to: 1s
+2017-10-16T19:04:05+02:00 INFO Max Bulk Size set to: 50
+2017-10-16T19:04:05+02:00 INFO httppollerbeat start running.
+2017-10-16T19:04:05+02:00 INFO httppollerbeat is running! Hit CTRL-C to stop it.
+2017-10-16T19:04:16+02:00 INFO value name : github_repository_fullname json path: {.data.repository.nameWithOwner} value 
+2017-10-16T19:04:16+02:00 INFO value name : dockerhub_repository_owner json path: {.user} value library
+2017-10-16T19:04:16+02:00 INFO value name : dockerhub_repository_name json path: {.name} value traefik
+2017-10-16T19:04:16+02:00 INFO value name : dockerhub_repostiory_star_count json path: {.star_count} value %!s(int64=233)
+2017-10-16T19:04:16+02:00 INFO value name : dockerhub_repository_pull_count json path: {.pull_count} value %!s(int64=22416643)
+2017-10-16T19:04:16+02:00 ERR Connecting error publishing events (retrying): Get http://localhost:9200: dial tcp 127.0.0.1:9200: getsockopt: connection refused
+2017-10-16T19:04:17+02:00 ERR Connecting error publishing events (retrying): Get http://localhost:9200: dial tcp 127.0.0.1:9200: getsockopt: connection refused
+2017-10-16T19:04:19+02:00 INFO Total non-zero values:  libbeat.publisher.messages_in_worker_queues=1 libbeat.publisher.published_events=1
+2017-10-16T19:04:19+02:00 INFO Uptime: 13.42319505s
+2017-10-16T19:04:19+02:00 INFO httppollerbeat stopped.

@@ -7,7 +7,7 @@
         }
       },
       "_meta": {
-        "version": "5.4.3"
+        "version": "5.6.3"
       },
       "date_detection": false,
       "dynamic_templates": [
@@ -45,53 +45,69 @@
             }
           }
         },
-        "dockerhub_repository_fullname": {
-          "ignore_above": 1024,
-          "index": "not_analyzed",
-          "type": "string"
+        "dockerhub": {
+          "properties": {
+            "repository": {
+              "properties": {
+                "fullname": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "owner": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "pull_count": {
+                  "type": "long"
+                },
+                "star_count": {
+                  "type": "long"
+                }
+              }
+            }
+          }
         },
-        "dockerhub_repository_name": {
-          "ignore_above": 1024,
-          "index": "not_analyzed",
-          "type": "string"
-        },
-        "dockerhub_repository_owner": {
-          "ignore_above": 1024,
-          "index": "not_analyzed",
-          "type": "string"
-        },
-        "dockerhub_repostiory_pull_count": {
-          "type": "long"
-        },
-        "dockerhub_repostiory_star_count": {
-          "type": "long"
-        },
-        "github_repository_forks_count": {
-          "type": "long"
-        },
-        "github_repository_fullname": {
-          "ignore_above": 1024,
-          "index": "not_analyzed",
-          "type": "string"
-        },
-        "github_repository_name": {
-          "ignore_above": 1024,
-          "index": "not_analyzed",
-          "type": "string"
-        },
-        "github_repository_open_issues_count": {
-          "type": "long"
-        },
-        "github_repository_owner": {
-          "ignore_above": 1024,
-          "index": "not_analyzed",
-          "type": "string"
-        },
-        "github_repository_pull_requests_count": {
-          "type": "long"
-        },
-        "github_repository_stargazers_count": {
-          "type": "long"
+        "github": {
+          "properties": {
+            "repository": {
+              "properties": {
+                "forks_count": {
+                  "type": "long"
+                },
+                "fullname": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "open_issues_count": {
+                  "type": "long"
+                },
+                "owner": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "pull_requests_count": {
+                  "type": "long"
+                },
+                "stargazers_count": {
+                  "type": "long"
+                }
+              }
+            }
+          }
         },
         "meta": {
           "properties": {

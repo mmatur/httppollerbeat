@@ -4,10 +4,10 @@ BEAT_GOPATH=$(firstword $(subst :, ,${GOPATH}))
 BEAT_URL=https://${BEAT_PATH}
 SYSTEM_TESTS=false
 TEST_ENVIRONMENT=false
+SNAPSHOT=no
 ES_BEATS?=./vendor/github.com/elastic/beats
 GOPACKAGES=$(shell glide novendor)
 PREFIX?=.
-SNAPSHOT?=no
 NOTICE_FILE=NOTICE
 
 # Path to the libbeat Makefile
